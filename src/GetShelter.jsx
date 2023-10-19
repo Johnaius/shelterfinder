@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from "react";
-
+import {Link} from 'react-router-dom';
 
 function GetShelter() {
    const emptyFields = {
       city: "",
       state: "",
    }
-   const [formFields, setFormFields] = useState(emptyFields)
+   const [formFields, setFormFields] = useState(emptyFields);
    function handleFormChange(e) {
       let temp = { ...formFields };
       temp[e.target.id] = e.target.value;
@@ -34,7 +34,8 @@ function GetShelter() {
    function getInfo(e){
       e.preventDefault();
       console.log(`${formFields.city}, ${formFields.state}`)
-      loadShelter(formFields.city,formFields.state);
+      // loadShelter(formFields.city,formFields.state);
+
 
    }
    useEffect(() => {
