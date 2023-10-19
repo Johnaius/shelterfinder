@@ -1,13 +1,14 @@
 import React, {useEffect, useState} from "react";
-import {Link} from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
-function GetShelter() {
+function GetShelter(props) {
    const emptyFields = {
       city: "",
       state: "",
    }
    const [formFields, setFormFields] = useState(emptyFields);
    const [shelterList, setShelterList] = useState([]);
+   const navigate = useNavigate();
    function handleFormChange(e) {
       let temp = { ...formFields };
       temp[e.target.id] = e.target.value;
@@ -47,10 +48,9 @@ function GetShelter() {
    function getInfo(e){
       e.preventDefault();
       console.log(`${formFields.city}, ${formFields.state}`)
-      loadWeather()
+
+      navigate("/shelters");
       // loadShelter(formFields.city,formFields.state);
-
-
    }
    useEffect(() => {
       console.log("GetShelter component running!")

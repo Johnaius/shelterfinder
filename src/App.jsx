@@ -7,14 +7,14 @@ import './App.css'
 import ShowShelters from './ShowShelters';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [shelters, setShelters] = useState(0)
 
   return (
     <BrowserRouter>
       <div className="container">
         <Routes>
-          <Route path="/" element={<GetShelter />} />
-          <Route path="/shelters" element={<ShowShelters />} />
+          <Route path="/" element={<GetShelter setShelters={setShelters}/>} />
+          <Route path="/shelters" element={<ShowShelters shelters={shelters}/>} />
         </Routes>
       </div>
     </BrowserRouter>
