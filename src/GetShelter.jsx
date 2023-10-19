@@ -30,14 +30,6 @@ function GetShelter() {
          console.log(result)
          setShelterList(result.shelters)
      }
-
-      try {
-         const response = await fetch(url, options);
-         const result = await response.json();
-         console.log(result);
-      } catch (error) {
-         console.error(error);
-      }
    }
    const loadWeather = async () => {
       const url = `https://api.openweathermap.org/data/2.5/weather?lat=42.95898539151949&lon=-78.86170465446156&exclude=minutely,hourly,daily&units=imperial&appid=64993140304b1d95eb81734c42f0d52a`;
