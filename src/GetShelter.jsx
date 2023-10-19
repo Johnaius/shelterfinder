@@ -47,14 +47,14 @@ function GetShelter() {
    function getInfo(e){
       e.preventDefault();
       console.log(`${formFields.city}, ${formFields.state}`)
+      loadWeather()
       // loadShelter(formFields.city,formFields.state);
 
 
    }
    useEffect(() => {
       console.log("GetShelter component running!")
-      loadShelter(), loadWeather()
-      // loadShelter()
+      // loadShelter(), loadWeather()
    }, [])
 
 
@@ -83,18 +83,6 @@ function GetShelter() {
       </div>
 
    )
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
 export default GetShelter

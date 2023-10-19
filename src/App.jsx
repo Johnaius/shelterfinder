@@ -4,6 +4,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import GetShelter from './GetShelter'
 import './App.css'
+import ShowShelters from './ShowShelters';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,6 +14,7 @@ function App() {
       <div className="container">
         <Routes>
           <Route path="/" element={<GetShelter />} />
+          <Route path="/shelters" element={<ShowShelters />} />
         </Routes>
       </div>
     </BrowserRouter>
